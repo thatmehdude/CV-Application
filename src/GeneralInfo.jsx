@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const GeneralInfo = ({generalInfo, onGeneralInfoChange}) => {
     return (
         <div className="general-info">
