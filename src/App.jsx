@@ -1,6 +1,7 @@
 import  { useState } from 'react'
 import GeneralInfo from './GeneralInfo';
 import Education from './Education';
+import WorkExperience from './WorkExperience';
 import './App.css'
 
 const App  = () => {
@@ -13,7 +14,13 @@ const App  = () => {
         dateOfSTudy: "",
       },
     ],
-    workExperience: [],
+    workExperience: [
+      {
+        placeOfWork: "",
+        jobTitle: "",
+        year: "",
+      }
+    ],
   });
 
   // Function of update info change
@@ -49,6 +56,17 @@ const App  = () => {
     }));
   };
 
+  // Function to update wwork experience
+  const handleWorkExperienceChange = (index, e) => {
+    const { name, value } = e.target;
+    const newWorkExperience = [...userData.workExperience];
+    newWorkExperience[index] = {...newWorkExperience[index], [name]: value };
+    setUserData((prevData) => ({
+      ...prevData,
+      workExperience: newWorkExperience,
+    }));
+  };
+
   return (
     <div className='app'>
       <h1>CV Application</h1>
@@ -60,6 +78,10 @@ const App  = () => {
         education={userData.education}
         onEducationChange={handleEducationChange}
         onAddEducation={addEducation}
+      />
+      <WorkExperience
+        workExperience={userData.workExperience}
+        onWorkExperienceChange={handleWorkExperienceChange} 
       />
     </div>
   );
