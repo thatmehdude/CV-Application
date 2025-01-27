@@ -1,7 +1,7 @@
 import  { useState } from 'react'
-import GeneralInfo from './GeneralInfo';
-import Education from './Education';
-import WorkExperience from './WorkExperience';
+import GeneralInfo from './components/GeneralInfo';
+import Education from './components/Education';
+import WorkExperience from './components/WorkExperience';
 import './App.css'
 
 const App  = () => {
