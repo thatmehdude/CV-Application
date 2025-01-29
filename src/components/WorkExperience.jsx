@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const WorkExperience = ({ workExperience, onWorkExperienceChange }) => {
+const WorkExperience = ({ workExperience, onWorkExperienceChange, onAddWorkExperience }) => {
     return (
       <div className="work-experience">
         <h2>Work Experience</h2>
@@ -42,6 +42,9 @@ const WorkExperience = ({ workExperience, onWorkExperienceChange }) => {
             </form>
           </div>
         ))}
+        <button type="button" onClick={onAddWorkExperience} className="add-button">
+        Add Work Experience
+      </button>
       </div>
     );
   };

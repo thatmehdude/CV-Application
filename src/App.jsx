@@ -67,6 +67,17 @@ const App  = () => {
     }));
   };
 
+  // Function to add Education
+  const addWorkExperience = () => {
+    setUserData((prevData) => ({
+      ...prevData,
+      workExperience: [
+        ...prevData.workExperience,
+        { placeOfWork: "", jobTitle: "", year: "" },
+      ],
+    }));
+  };
+
   return (
     <div className='app'>
       <h1>CV Application</h1>
@@ -81,7 +92,8 @@ const App  = () => {
       />
       <WorkExperience
         workExperience={userData.workExperience}
-        onWorkExperienceChange={handleWorkExperienceChange} 
+        onWorkExperienceChange={handleWorkExperienceChange}
+        onAddWorkExperience={addWorkExperience} 
       />
     </div>
   );
