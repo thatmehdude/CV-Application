@@ -23,6 +23,9 @@ const App  = () => {
     ],
   });
 
+  // Tracks if form is in edit mode
+  const [isEditing, setIsEditing] = useState(true);
+
   // Function of update info change
   const handleGeneralInfoChange = (e) => {
     const {name, value } = e.target;
@@ -67,7 +70,7 @@ const App  = () => {
     }));
   };
 
-  // Function to add Education
+  // Function to add Work Experience
   const addWorkExperience = () => {
     setUserData((prevData) => ({
       ...prevData,
@@ -78,23 +81,44 @@ const App  = () => {
     }));
   };
 
+  // Function to handle form submission
+  const handleSubmit = () => {
+    setIsEditing(false);
+  };
+
+  // Function to handle editing
+  const handleEdit = () => {
+    setIsEditing(true);
+  }
+
   return (
     <div className='app'>
       <h1>CV Application</h1>
       <GeneralInfo
         generalInfo={userData.generalInfo}
         onGeneralInfoChange={handleGeneralInfoChange}
+        isEditing={isEditing}
       />
       <Education
         education={userData.education}
         onEducationChange={handleEducationChange}
         onAddEducation={addEducation}
+        isEditing={isEditing}
       />
       <WorkExperience
         workExperience={userData.workExperience}
         onWorkExperienceChange={handleWorkExperienceChange}
-        onAddWorkExperience={addWorkExperience} 
+        onAddWorkExperience={addWorkExperience}
+        isEditing={isEditing} 
       />
+      <div className='actions'>
+        {isEditing ? (
+          <button type='button' onClick={handleSubmit} className='submit-button'>Submit</button>
+        ) : (
+          <button type='button' onClick={handleEdit} className='edit-button'>Edit</button>
+        )
+        }
+      </div>
     </div>
   );
 }

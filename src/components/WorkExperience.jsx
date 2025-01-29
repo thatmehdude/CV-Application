@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
-const WorkExperience = ({ workExperience, onWorkExperienceChange, onAddWorkExperience }) => {
+const WorkExperience = ({ workExperience, onWorkExperienceChange, onAddWorkExperience, isEditing }) => {
     return (
       <div className="work-experience">
         <h2>Work Experience</h2>
         {workExperience.map((work, index) => (
           <div key={index} className="workExperience-entry">
-            <form>
+            {isEditing ? (
+              <form>
               <div className="form-group">
                 <label htmlFor={`placeOfWork-${index}`}>Place of Work:</label>
                 <input
@@ -40,6 +41,14 @@ const WorkExperience = ({ workExperience, onWorkExperienceChange, onAddWorkExper
                 />
               </div>
             </form>
+            ) : (
+              <div className="submitted-info">
+                <p><strong>Place of work:</strong> {work.placeOfWOrk}</p>
+                <p><strong>Job title:</strong> {work.jobTitle}</p>
+                <p><strong>Year:</strong> {work.year}</p>
+              </div>
+            )}
+            
           </div>
         ))}
         <button type="button" onClick={onAddWorkExperience} className="add-button">

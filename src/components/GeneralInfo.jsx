@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
-const GeneralInfo = ({generalInfo, onGeneralInfoChange}) => {
+const GeneralInfo = ({generalInfo, onGeneralInfoChange, isEditing}) => {
     return (
         <div className="general-info">
             <h2>General Information</h2>
-            <form action="">
+            {isEditing ? (
+                <form action="">
                 <div className="form-group">
                     <label htmlFor="name">Name:</label>
                     <input
@@ -38,6 +39,14 @@ const GeneralInfo = ({generalInfo, onGeneralInfoChange}) => {
                     />
                 </div>
             </form>
+            ) : (
+                <div className="submitted-info">
+                    <p><strong>Name:</strong> {generalInfo.name}</p>
+                    <p><strong>Email:</strong> {generalInfo.email}</p>
+                    <p><strong>Phone:</strong> {generalInfo.phone}</p>
+                </div>
+            )}
+            
         </div>
     )
 }

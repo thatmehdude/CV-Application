@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
-const Education = ({ education, onEducationChange, onAddEducation }) => {
+const Education = ({ education, onEducationChange, onAddEducation, isEditing }) => {
   return (
     <div className="education">
       <h2>Educational Experience</h2>
       {education.map((edu, index) => (
         <div key={index} className="education-entry">
-          <form>
+          {isEditing ? (
+            <form>
             <div className="form-group">
               <label htmlFor={`schoolName-${index}`}>School Name:</label>
               <input
@@ -40,6 +41,13 @@ const Education = ({ education, onEducationChange, onAddEducation }) => {
               />
             </div>
           </form>
+          ) : (
+            <div className="submitted-info">
+                    <p><strong>School name:</strong> {edu.schoolName}</p>
+                    <p><strong>Title of study:</strong> {edu.titleOfStudy}</p>
+                    <p><strong>Date of study:</strong> {edu.dateOfStudy}</p>
+                </div>
+          )}
         </div>
       ))}
       <button type="button" onClick={onAddEducation} className="add-button">
