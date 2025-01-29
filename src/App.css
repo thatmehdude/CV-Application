@@ -117,3 +117,32 @@ h1 {
 .add-button:hover {
   background-color: #0056b3;
 }
+
+.actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.submit-button,
+.edit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover,
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.submitted-info {
+  margin-top: 10px;
+}
+
+.submitted-info p {
+  margin: 5px 0;
+}
