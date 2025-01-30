@@ -1,4 +1,3 @@
-import './styles/App.css'
 /* eslint-disable react/prop-types */
 const WorkExperience = ({ workExperience, onWorkExperienceChange, onAddWorkExperience, isEditing }) => {
     return (
