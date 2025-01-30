@@ -1,3 +1,4 @@
+import './styles/App.css'
 /* eslint-disable react/prop-types */
 const Education = ({ education, onEducationChange, onAddEducation, isEditing }) => {
   return (

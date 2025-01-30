@@ -2,7 +2,7 @@ import  { useState } from 'react'
 import GeneralInfo from './components/GeneralInfo';
 import Education from './components/Education';
 import WorkExperience from './components/WorkExperience';
-import './App.css'
+import './styles/App.css'
 
 const App  = () => {
   const [userData, setUserData] = useState({
