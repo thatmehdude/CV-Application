@@ -1,3 +1,25 @@
+:root {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #213547;
+  background-color: #ffffff;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -10,11 +32,15 @@
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
+  background-color: #ffffff;
 }
 
 h1 {
   text-align: center;
   color: #333;
+  font-size: 2.5em;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
 .general-info,
@@ -47,6 +73,8 @@ h1 {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: #ffffff;
+  color: #333;
 }
 
 .form-group input:focus {
@@ -62,6 +90,11 @@ h1 {
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #f9f9f9;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .add-button {
@@ -107,4 +140,5 @@ h1 {
 
 .submitted-info p {
   margin: 5px 0;
+  color: #333;
 }

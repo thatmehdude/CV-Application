@@ -13,8 +13,8 @@ const WorkExperience = ({ workExperience, onWorkExperienceChange, onAddWorkExper
                 <input
                   type="text"
                   id={`placeOfWork-${index}`}
-                  name="placeOfWOrk"
-                  value={work.placeOfWOrk}
+                  name="placeOfWork"
+                  value={work.placeOfWork}
                   onChange={(e) => onWorkExperienceChange(index, e)}
                   placeholder="Enter Place of work"
                 />
