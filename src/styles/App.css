@@ -1,144 +1,192 @@
+/* Global styles and resets */
 :root {
-  font-family: Arial, sans-serif;
+  font-family: "Courier New", monospace;
   line-height: 1.5;
   font-weight: 400;
-  color: #213547;
+  color: #000000;
   background-color: #ffffff;
-  
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #ffffff;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffffff,
+    #ffffff 10px,
+    #f5f5f5 10px,
+    #f5f5f5 20px
+  );
 }
 
+/* Root container */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
+/* Main app container */
 .app {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  padding: 40px;
   background-color: #ffffff;
+  border: 3px solid #000;
+  box-shadow: 8px 8px 0 #000;
 }
 
+/* Headings */
 h1 {
-  text-align: center;
-  color: #333;
-  font-size: 2.5em;
-  line-height: 1.1;
-  margin-bottom: 20px;
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  margin-bottom: 40px;
+  border-bottom: 5px solid #000;
+  padding-bottom: 10px;
+  font-weight: 900;
 }
 
+h2 {
+  font-size: 2em;
+  text-transform: uppercase;
+  margin: 30px 0;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  transform: rotate(-1deg);
+}
+
+/* Section styles */
 .general-info,
 .education,
 .work-experience {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  border: 2px solid #000;
+  padding: 20px;
+  position: relative;
 }
 
-.general-info h2,
-.education h2,
-.work-experience h2 {
-  color: #555;
-  margin-bottom: 10px;
-}
-
+/* Form styles */
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   font-weight: bold;
-  color: #333;
+  font-size: 1.1em;
+  text-transform: uppercase;
 }
 
 .form-group input {
   width: 100%;
-  padding: 8px;
+  padding: 12px;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 2px solid #000;
+  font-family: "Courier New", monospace;
   background-color: #ffffff;
-  color: #333;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-width: 4px;
+  transform: translateX(4px);
+  transition: transform 0.2s;
 }
 
+/* Entry containers */
 .education-entry,
 .workExperience-entry {
   margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #f9f9f9;
+  padding: 20px;
+  border: 2px solid #000;
+  background-color: #ffffff;
+  transform: rotate(0.5deg);
 }
 
-button {
-  font-family: inherit;
+.education-entry:nth-child(even),
+.workExperience-entry:nth-child(even) {
+  transform: rotate(-0.5deg);
+}
+
+/* Button styles */
+.add-button,
+.submit-button,
+.edit-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
   cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Courier New", monospace;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .add-button {
-  display: block;
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  margin-top: 20px;
+  transform: rotate(-0.5deg);
 }
 
-.add-button:hover {
-  background-color: #0056b3;
+.add-button:hover,
+.submit-button:hover,
+.edit-button:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 0 #000;
 }
 
 .actions {
-  margin-top: 20px;
+  margin-top: 40px;
   text-align: center;
 }
 
-.submit-button,
-.edit-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.submit-button:hover,
-.edit-button:hover {
-  background-color: #0056b3;
-}
-
+/* Submitted info display */
 .submitted-info {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .submitted-info p {
-  margin: 5px 0;
-  color: #333;
+  margin: 10px 0;
+  font-size: 1.1em;
+  border-left: 3px solid #000;
+  padding-left: 10px;
+}
+
+.submitted-info p strong {
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+/* Added visual elements */
+.general-info::before,
+.education::before,
+.work-experience::before {
+  content: "//";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: #fff;
+  padding: 0 10px;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .app {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
 }
