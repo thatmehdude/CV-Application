@@ -44,7 +44,7 @@ const WorkExperience = ({ workExperience, onWorkExperienceChange, onAddWorkExper
             </form>
             ) : (
               <div className="submitted-info">
-                <p><strong>Place of work:</strong> {work.placeOfWOrk}</p>
+                <p><strong>Place of work:</strong> {work.placeOfWork}</p>
                 <p><strong>Job title:</strong> {work.jobTitle}</p>
                 <p><strong>Year:</strong> {work.year}</p>
               </div>
